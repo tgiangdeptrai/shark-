@@ -8,13 +8,16 @@ local Tab = Window:MakeTab({
 })
 
 Tab:AddToggle({
-    Name = "Auto Farm Lever",
+    Name = "Autofarm",
     Default = false,
     Callback = function(Value)
-        print(farm)
+        print(Value)
     end
 }) 
 
+G.main({
+
+})
 
 local ScreenGui = Instance.new("ScreenGui")
 local ImageButton = Instance.new("ImageButton")
