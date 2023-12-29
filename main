@@ -1,3 +1,22 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/1st-Mars/Misc/main/O')))()
+local Window = OrionLib:MakeWindow({Name = "Title of the library", HidePremium = false, SaveConfig = true, ConfigFolder = "OrionTest"})
+
+
+local Tab = Window:MakeTab({
+    Name = "Tab 1",
+    Icon = "rbxassetid://4483345998",
+    PremiumOnly = false
+})
+Tab:AddToggle({
+    Name = "AutoFarm",
+    Default = false,
+    Callback = function(sex)
+        AutoFarm=sex
+    end
+}) 
+
+G.AutoFarm=true
+
 if game.PlaceId == 2753915549 then
     World1 = true
 elseif game.PlaceId == 4442272183 then
@@ -1004,3 +1023,22 @@ for i,v in pairs(game.Workspace.BananaSpawner:GetChildren()) do
         end 
     end
 end
+
+local ScreenGui = Instance.new("ScreenGui")
+local ImageButton = Instance.new("ImageButton")
+local UICorner = Instance.new("UICorner")
+ScreenGui.Name = ""
+ScreenGui.Parent = game.CoreGui or game.Players.LocalPlayer.PlayerGui
+ScreenGui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+ImageButton.Parent = ScreenGui
+ImageButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton.BorderSizePixel = 0
+ImageButton.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton.Size = UDim2.new(0, 50, 0, 50)
+ImageButton.Draggable = true
+ImageButton.Image = "https://www.roblox.com/asset/?id=15446676864"
+UICorner.Parent = ImageButton
+ImageButton.MouseButton1Down:connect(function()
+       game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
+       game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+end)
